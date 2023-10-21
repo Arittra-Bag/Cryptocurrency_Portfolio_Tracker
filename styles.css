@@ -1,0 +1,59 @@
+/* Add your CSS styles here for improved UI and responsiveness */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.wallet-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.account-details {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.chart-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#usdEquivalent {
+    text-align: center;
+    margin: 20px 0;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ETH Portfolio Tracker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>ETH Portfolio Tracker</h1>
+
+        <div class="wallet-buttons">
+            <button id="connectWallet" class="button">Connect Wallet</button>
+            <button id="disconnectWallet" class="button" style="display: none;">Disconnect Wallet</button>
+        </div>
+
+        <div class="account-details" id="accountDetails"></div>
+
+        <h2>Add Account/Wallet</h2>
+        <div class="input-container">
+            <input type="text" id="accountAddress" class="input" placeholder="Enter Wallet Address">
+            <button id="addAccount" class="button">Add Account</button>
+        </div>
+
+        <h2>Portfolio Summary</h2>
+        <div class="portfolio-list" id="portfolioList"></div>
+
+        <div class="chart-container">
+            <canvas id="ethChart" width="400" height="200"></canvas>
+        </div>
+
+        <div id="usdEquivalent">USD Equivalent: Calculating...</div>
+    </div>
+
+    <!-- Send Cryptocurrency Section -->
+    <h2>Send ETH</h2>
+    <div class="input-container">
+        <input type="text" id="recipientAddress" class="input" placeholder="Recipient Address">
+        <input type="text" id="cryptoToSend" class="input" placeholder="Enter cryptocurrency symbol ,i.e. ETH">
+        <input type="number" id="sendAmount" class="input" placeholder="Amount to send">
+        <button id="sendButton" class="button">Send</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
