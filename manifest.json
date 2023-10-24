@@ -2,13 +2,13 @@
     "name": "Modern Portfolio Tracker",
     "short_name": "Portfolio Tracker",
     "description": "Track your cryptocurrency portfolio",
-    "start_url": "/index.html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007BFF",
     "icons": [
         {
-            "src": "/icon.png",
+            "src": "icon.png",
             "sizes": "192x192",
             "type": "image/png"
         }
