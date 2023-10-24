@@ -44,6 +44,11 @@
         <div id="usdEquivalent">USD Equivalent: Calculating...</div>
     </div>
 
+    <!-- Compare ETH Prices for 1 Ether Section -->
+    <h2>Compare ETH Prices for 1 Ether</h2>
+    <p id="best-price-info">Fetching prices...</p>
+    <div id="exchange-prices" class="price-card-container"></div>
+
     <!-- Send Cryptocurrency Section -->
     <h2>Send ETH</h2>
     <div class="input-container">
@@ -54,6 +59,71 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
-    <script src="app.js"></script>    
+    <script src="app.js"></script>
+    <script>
+        // Array of exchange data with names and API URLs
+        const exchanges = [
+            { name: "Kraken", url: 'https://api.kraken.com/0/public/Ticker?pair=ETHUSD' },
+            { name: "Coinbase", url: 'https://api.coinbase.com/v2/prices/ETH-USD/spot' },
+            { name: "Gemini", url: 'https://api.gemini.com/v1/pubticker/ethusd' },
+            { name: "Bitstamp", url: 'https://www.bitstamp.net/api/v2/ticker/ethusd' },
+            { name: "Huobi", url: 'https://api.huobi.pro/market/detail/merged?symbol=ethusdt' },
+            { name: "Bybit", url: 'https://api.bybit.com/v2/public/tickers?symbol=ETHUSD' },
+            { name: "CoinGecko", url: 'https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd' }
+        ];
+
+        // Function to fetch and compare prices
+        function fetchAndComparePrices() {
+            let bestPrice = Number.MAX_VALUE;
+            let bestExchange = '';
+
+            exchanges.forEach(exchange => {
+                fetch(exchange.url)
+                    .then(response => response.json())
+                    .then(data => {
+                        let ethPrice;
+
+                        if (exchange.name === "Kraken") {
+                            ethPrice = data.result.XETHZUSD.c[0];
+                        } else if (exchange.name === "Coinbase") {
+                            ethPrice = data.data.amount;
+                        } else if (exchange.name === "Gemini") {
+                            ethPrice = data.last;
+                        } else if (exchange.name === "Bitstamp") {
+                            ethPrice = data.last;
+                        } else if (exchange.name === "Huobi") {
+                            ethPrice = data.tick.close;
+                        } else if (exchange.name === "Bybit") {
+                            ethPrice = data.result[0].last_price;
+                        } else if (exchange.name === "CoinGecko") {
+                            ethPrice = data.ethereum.usd;
+                        } else {
+                            // Handle other exchanges as needed
+                        }
+
+                        if (ethPrice !== null) {
+                            const exchangeName = exchange.name;
+                            const priceCard = document.createElement('div');
+                            priceCard.className = 'price-card';
+                            priceCard.innerHTML = `<p>${exchangeName}: $${ethPrice}</p>`;
+                            document.getElementById('exchange-prices').appendChild(priceCard);
+
+                            if (ethPrice < bestPrice) {
+                                bestPrice = ethPrice;
+                                bestExchange = exchangeName;
+                            }
+                        }
+
+                        document.getElementById('best-price-info').innerHTML = `<strong>Best Price:</strong> ${bestExchange} - $${bestPrice}`;
+                    })
+                    .catch(error => {
+                        console.error(`Error fetching prices from ${exchange.name}:`, error);
+                    });
+            });
+        }
+
+        // Call the function to fetch and compare prices when the page loads
+        fetchAndComparePrices();
+    </script>
 </body>
 </html>
