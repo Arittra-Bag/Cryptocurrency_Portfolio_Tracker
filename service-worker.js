@@ -3,10 +3,10 @@ self.addEventListener('install', (event) => {
         caches.open('portfolio-tracker-v1').then((cache) => {
             return cache.addAll([
                 '/',
-                '/index.html',
-                '/styles.css',
-                '/app.js',
-                '/icon.png'
+                'index.html',
+                'styles.css',
+                'app.js',
+                'icon.png'
             ]);
         })
     );
