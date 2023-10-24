@@ -4,7 +4,18 @@
     <title>ETH Portfolio Tracker</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js').then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -43,17 +54,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
-    <script src="app.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-                    console.log('Service Worker registered with scope:', registration.scope);
-                }).catch((error) => {
-                    console.error('Service Worker registration failed:', error);
-                });
-            });
-        }
-    </script>    
+    <script src="app.js"></script>    
 </body>
 </html>
