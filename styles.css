@@ -57,3 +57,46 @@ h2 {
     text-align: center;
     margin: 20px 0;
 }
+
+/* Add styles for the price comparison section */
+#best-price-info {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  #exchange-prices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .price-card {
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .price-card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  
+  /* Styling for individual price cards */
+  .price-card p {
+    font-size: 18px;
+  }
+  
+/* Add a hovering effect to price cards */
+.price-card:hover {
+    background-color: #005bea;
+    color: #fff;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
