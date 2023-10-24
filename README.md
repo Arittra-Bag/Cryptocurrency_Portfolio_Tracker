@@ -56,4 +56,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or feedback, you can reach out to [Arittra Bag](mailto:arittrabag@gmail.com?subject=[Questions/Feedback])
+For questions or feedback, you can reach out to [Arittra Bag](mailto:arittrabag@gmail.com).
