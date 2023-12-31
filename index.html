@@ -16,6 +16,48 @@
             });
         }
     </script>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark Background */
+            color: #00ff00; /* Neon Green Text */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            color: #00ff00; /* Neon Green Headings */
+        }
+
+        .button {
+            background-color: #00ff00; /* Neon Green Button */
+            color: #1a1a1a; /* Dark Text on Button */
+        }
+
+        .wallet-buttons {
+            margin-bottom: 20px;
+        }
+
+        .input, #best-price-info {
+            background-color: #1a1a1a; /* Dark Background for Inputs */
+            color: #00ff00; /* Neon Green Text in Inputs */
+            border: 1px solid #00ff00; /* Neon Green Border for Inputs */
+        }
+
+        .portfolio-list, .chart-container, #usdEquivalent, #exchange-prices, .price-card-container, .price-card, .input-container {
+            background-color: #1a1a1a; /* Dark Background for Other Sections */
+            color: #00ff00; /* Neon Green Text in Other Sections */
+            border: 1px solid #00ff00; /* Neon Green Border for Other Sections */
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -48,7 +90,7 @@
     <h2>Compare ETH Prices for 1 Ether</h2>
     <p id="best-price-info">Fetching prices...</p>
     <div id="exchange-prices" class="price-card-container"></div>
-
+   
     <!-- Send Cryptocurrency Section -->
     <h2>Send ETH</h2>
     <div class="input-container">
@@ -57,8 +99,8 @@
         <input type="number" id="sendAmount" class="input" placeholder="Amount to send">
         <button id="sendButton" class="button">Send</button>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
     <script src="app.js"></script>
     <script>
         // Array of exchange data with names and API URLs
