@@ -53,6 +53,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## Acknowledgments
 
 - This project was developed as part of the BITS Pilani Postman API Hackathon 3.0.
+- This project was also used as a solution at MLH's Month Long Hackathon December 2023
 
 ## Contact
 
